@@ -1,0 +1,118 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/build/classes/main
+compile options:
+2 items
+0 -> -deprecation
+1 -> -unchecked
+javac options:
+8 items
+0 -> -source
+1 -> 1.8
+2 -> -target
+3 -> 1.8
+4 -> -d
+5 -> /Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/build/classes/main
+6 -> -g
+7 -> -XDuseUnsharedTable=true
+compiler version:
+1 items
+0 -> 2.11.7
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+2 items
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> /Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/build/classes/main/com/marionete/stock/importer/Stock$.class
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> /Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/build/classes/main/com/marionete/stock/importer/Stock.class
+binary dependencies:
+2 items
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/rt.jar
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> /Users/joseluisvf/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.7/f75e7acabd57b213d6f61483240286c07213ec0e/scala-library-2.11.7.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+2 items
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> com.marionete.stock.importer.Stock
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> com.marionete.stock.importer.Stock$
+used names:
+30 items
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> &&
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> <init>
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> ==
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> AbstractFunction3
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> BigDecimal
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> None
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> Predef
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> Product
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> ScalaRunTime
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> Serializable
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> Stock
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> String
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> _hashCode
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> _toString
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> asInstanceOf
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> buyingPrice
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> com
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> eq
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> importer
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> isInstanceOf
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> marionete
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> package
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> runtime
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> scala
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> sellingPrice
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> stock
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> symbol
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> toString
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> typedProductIterator
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> ||
+product stamps:
+2 items
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/build/classes/main/com/marionete/stock/importer/Stock$.class -> lastModified(1469806780000)
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/build/classes/main/com/marionete/stock/importer/Stock.class -> lastModified(1469806780000)
+source stamps:
+1 items
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> hash(9415151e3161c914bc3b51f68fc1dcf14873797f)
+binary stamps:
+2 items
+/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/rt.jar -> lastModified(1459485740000)
+/Users/joseluisvf/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.7/f75e7acabd57b213d6f61483240286c07213ec0e/scala-library-2.11.7.jar -> lastModified(1469438757000)
+class names:
+2 items
+/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/rt.jar -> java.lang.Object
+/Users/joseluisvf/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.7/f75e7acabd57b213d6f61483240286c07213ec0e/scala-library-2.11.7.jar -> scala.runtime.AbstractFunction3
+internal apis:
+1 items
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHANE0yaAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAIXNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cAuNsWd0AAZub3RpZnlzcQB+AAwy3qRxdAAEd2FpdHNxAH4ADOj96H10AA5jb3B5JGRlZmF1bHQkMnNxAH4ADNj8KEx0AA0kYXNJbnN0YW5jZU9mc3EAfgAMMKdw8nQAC2J1eWluZ1ByaWNlc3EAfgAMpCuAPnQADHByb2R1Y3RBcml0eXNxAH4ADH+ZeVh0AAZlcXVhbHNzcQB+AAzBZZF4dAAMYXNJbnN0YW5jZU9mc3EAfgAM4GHmhHQADHN5bmNocm9uaXplZHNxAH4ADFnqT5R0AA0kaXNJbnN0YW5jZU9mc3EAfgAMRiqN9HQACGNhbkVxdWFsc3EAfgAM3Vg3W3QADXByb2R1Y3RQcmVmaXhzcQB+AAy+1GJTdAAJbm90aWZ5QWxsc3EAfgAMktwYI3QADGlzSW5zdGFuY2VPZnNxAH4ADMCcxzZ0AAZzeW1ib2xzcQB+AAxgbDjzdAAGPGluaXQ+c3EAfgAMQb8KDHQAAj09c3EAfgAMdWqNt3QABWNsb25lc3EAfgAMe5uuqXQADHNlbGxpbmdQcmljZXNxAH4ADKJo9BN0AA5jb3B5JGRlZmF1bHQkM3NxAH4ADFP0qJV0AARjb3B5c3EAfgAMA8SS9nQACHRvU3RyaW5nc3EAfgAMKAuW/XQAAiE9c3EAfgAMXDgvXnQACGdldENsYXNzc3EAfgAMAz7BHHQADmNvcHkkZGVmYXVsdCQxc3EAfgAM+7LwEXQAAm5lc3EAfgAMM8/L7nQAAmVxc3EAfgAMY2wZLXQAD3Byb2R1Y3RJdGVyYXRvcnNxAH4ADIbzaG10AAIjI3NxAH4ADBeKJuJ0AAhmaW5hbGl6ZXNxAH4ADE92wyp0AA5wcm9kdWN0RWxlbWVudHNxAH4ADHJ+s4t0AAhoYXNoQ29kZXNxAH4ADPd3vfh0AAVTdG9ja3NyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AFl4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc8cREyFpnNwkAgABQgAFZmxhZ3N4cAB0ACJjb20ubWFyaW9uZXRlLnN0b2NrLmltcG9ydGVyLlN0b2NrdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAIQ2xhc3NEZWZ1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHAAcHNyACB4c2J0aS5TYWZlTGF6eSQkYW5vbmZ1biRzdHJpY3QkMQAAAAAAAAAAAgABTAAHdmFsdWUkMXEAfgByeHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBxAHBzcQB+AHZzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AWUwACWluaGVyaXRlZHEAfgBZTAAHcGFyZW50c3EAfgBZeHEAfgB6c3EAfgBxAHBzcQB+AHZ1cQB+AFQAAAAAc3EAfgBxAHBzcQB+AHZ1cQB+AFQAAAAAc3EAfgBxAHBzcQB+AHZ1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAABnNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AHl0AAxTZXJpYWxpemFibGVzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AHlzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABXNjYWxhc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AJdzcQB+AIpxAH4AjXNxAH4AjnNxAH4AkXVxAH4AlAAAAANzcQB+AJZ0AARqYXZhc3EAfgCWdAACaW9xAH4Am3NxAH4AinQAB1Byb2R1Y3RxAH4AkHNxAH4AinQABkVxdWFsc3EAfgCQc3EAfgCKdAAGT2JqZWN0c3EAfgCOc3EAfgCRdXEAfgCUAAAAA3NxAH4AlnEAfgChc3EAfgCWdAAEbGFuZ3EAfgCbc3EAfgCKdAADQW55cQB+AJB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAABHNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AA1jb20ubWFyaW9uZXRlc3EAfgC0dAAcY29tLm1hcmlvbmV0ZS5zdG9jay5pbXBvcnRlcnNxAH4AtHQAE2NvbS5tYXJpb25ldGUuc3RvY2tzcQB+ALR0AANjb21zcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVY3T5KidXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQAZi9Vc2Vycy9qb3NlbHVpc3ZmL21hcmlvbmV0ZV9kZW1vX3N0dWZmL3NjYWxhX3RyYWluaW5nX3Byb2plY3QvcmVwby9TdG9ja3NBcHAvZG9tYWluL2J1aWxkL2NsYXNzZXMvbWFpbnQAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFJQVFR4xYckUvDtR9o/B3PFIc3l/
+external apis:
+0 items
+source infos:
+1 items
+/Users/joseluisvf/marionete_demo_stuff/scala_training_project/repo/StocksApp/domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVjdPkqJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAZi9Vc2Vycy9qb3NlbHVpc3ZmL21hcmlvbmV0ZV9kZW1vX3N0dWZmL3NjYWxhX3RyYWluaW5nX3Byb2plY3QvcmVwby9TdG9ja3NBcHAvZG9tYWluL2J1aWxkL2NsYXNzZXMvbWFpbnQAAS8=
