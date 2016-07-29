@@ -1,0 +1,12 @@
+project (":messaging"){
+    ext{
+         kafkaVersion = '0.10.0.0'
+
+    }
+    dependencies{
+
+        compile "io.confluent:kafka-avro-serializer:3.0.0"
+        compile  "org.apache.kafka:kafka-clients:version:$kafkaVersion"
+        compile group: 'com.sksamuel.avro4s', name: 'avro4s-core_2.11', version: '1.5.3'
+    }
+}
