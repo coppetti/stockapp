@@ -1,9 +1,5 @@
 # StocksApp
 
-**Remember to create your own branches**
-
-The Application
-Version 1
 Build an application simulate market participants who want to buy stocks and currency. Using the Yahoo Finance API get
 the current market price. On top of the current value the system adds a spread and offers it to the client in real time.
  A client has an account and based on the funds available the order is fulfilled or not. All participants’ goods are
