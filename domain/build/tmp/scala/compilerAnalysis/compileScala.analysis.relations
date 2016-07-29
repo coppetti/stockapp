@@ -1,11 +1,11 @@
 products:
-   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> domain/build/classes/main/com/marionete/stock/importer/Stock$.class
-   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> domain/build/classes/main/com/marionete/stock/importer/Stock.class
+   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> domain/build/classes/main/com/marionete/stock/domain/Stock$.class
+   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> domain/build/classes/main/com/marionete/stock/domain/Stock.class
 binary dependencies:
    domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/rt.jar
-   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> /Users/joseluisvf/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.7/f75e7acabd57b213d6f61483240286c07213ec0e/scala-library-2.11.7.jar
+   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> /Users/matheussilveira/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.7/f75e7acabd57b213d6f61483240286c07213ec0e/scala-library-2.11.7.jar
 source dependencies:
 external dependencies:
 class names:
-   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> com.marionete.stock.importer.Stock
-   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> com.marionete.stock.importer.Stock$
+   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> com.marionete.stock.domain.Stock
+   domain/src/main/scala/com/marionete/stock/domain/Stock.scala -> com.marionete.stock.domain.Stock$

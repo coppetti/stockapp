@@ -2,6 +2,7 @@
 project(":importer"){
     dependencies{
         compile project(":domain")
+        compile project(":messaging")
         compile group: 'com.yahoofinance-api', name: 'YahooFinanceAPI', version: '3.4.0'
     }
 

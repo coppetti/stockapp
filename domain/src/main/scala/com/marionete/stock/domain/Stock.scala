@@ -1,4 +1,4 @@
-package com.marionete.stock.importer
+package com.marionete.stock.domain
 
 /**
   * It has a symbol
