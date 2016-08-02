@@ -10,7 +10,7 @@ import kafka.utils.VerifiableProperties
 import kafka.consumer.{ConsumerConfig, Consumer}
 import io.confluent.kafka.serializers.{KafkaAvroDecoder}
 
-object ScalaGoKafka {
+object KafkaConsumer {
   var readTopic: String = "topic"
   val group = "group-1"
 
