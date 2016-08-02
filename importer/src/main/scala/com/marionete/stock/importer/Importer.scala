@@ -9,7 +9,7 @@ import com.typesafe.scalalogging.slf4j.StrictLogging
 object Importer extends App with StrictLogging {
   val config = ConfigFactory.load()
 
-  val importerConfig = ImporterConfig(config)
+  val importerConfig = ImporterConfig.apply(config)
   logger.info(
     s"""
        |Configuration:
@@ -23,13 +23,13 @@ object Importer extends App with StrictLogging {
        |$kafkaConfig
        |
     """.stripMargin)
-  //val kafkaProducer = new AvroKafkaProducer[Stock](importerConfig.stocksTopic, kafkaConfig)
+  val kafkaProducer = new AvroKafkaProducer[Stock](importerConfig.stocksTopic, kafkaConfig)
 
   logger.info("Starting the YahooPoller")
   val importer = new YahooPoller(importerConfig.stocks, importerConfig.pollPeriod)(stocks =>
     stocks.foreach { s =>
       logger.debug(s"Sending the stock:$s")
-      //kafkaProducer.send(s, s.symbol)
+      kafkaProducer.send(s, s.symbol)
     }
   )
   importer.start()

@@ -28,7 +28,7 @@ class AvroKafkaProducer[T <: Product](topic: String, config: KafkaConfig) extend
 
   def send(t: T, key: String)(implicit toRecord:ToRecord[T], fromRecord: FromRecord[T]): Future[RecordMetadata] = {
     val record = RecordFormat[T].to(t)
-    val producerRecord = new ProducerRecord("topic", key, record)
+    val producerRecord = new ProducerRecord(topic, key, record)
     kafkaProducer.send(producerRecord)
   }
 }
