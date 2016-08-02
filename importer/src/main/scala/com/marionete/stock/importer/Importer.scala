@@ -34,5 +34,5 @@ object Importer extends App with StrictLogging {
   )
   importer.start()
 
-  Thread.sleep(Long.MaxValue)
+  //Thread.sleep(Long.MaxValue)
 }
