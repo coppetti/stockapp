@@ -6,6 +6,8 @@ import com.typesafe.config.ConfigFactory
 import com.typesafe.scalalogging.slf4j.StrictLogging
 
 
+
+
 object Importer extends App with StrictLogging {
   val config = ConfigFactory.load()
 
@@ -15,6 +17,7 @@ object Importer extends App with StrictLogging {
        |Configuration:
        |$importerConfig
     """.stripMargin)
+
 
   val kafkaConfig = KafkaConfig(config)
   logger.info(
@@ -34,5 +37,6 @@ object Importer extends App with StrictLogging {
   )
   importer.start()
 
-  //Thread.sleep(Long.MaxValue)
+  Thread.sleep(Long.MaxValue)
 }
+

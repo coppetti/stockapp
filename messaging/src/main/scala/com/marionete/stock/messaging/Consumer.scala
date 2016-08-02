@@ -3,73 +3,38 @@ package com.marionete.stock.messaging
 /**
   * Created by matheussilveira on 02/08/2016.
   */
-import java.util.Properties
 
-import org.slf4j.LoggerFactory
 
-import kafka.consumer.Consumer
-import kafka.consumer.ConsumerConfig
-import kafka.consumer.ConsumerTimeoutException
-import kafka.consumer.Whitelist
-import kafka.serializer.DefaultDecoder
+import java.util.{Properties}
+import kafka.utils.VerifiableProperties
+import kafka.consumer.{ConsumerConfig, Consumer}
+import io.confluent.kafka.serializers.{KafkaAvroDecoder}
 
-case class KafkaConsumer(topic: String, groupId: String, zookeeperConnect: String) {
+object ScalaGoKafka {
+  var readTopic: String = "topic"
+  val group = "group-1"
 
-  private val props = new Properties()
+  val broker = "localhost:9092"
+  val zookeeper = "localhost:2181"
+  val schemaRepo = "http://localhost:8081"
 
-  val logger = LoggerFactory.getLogger(this.getClass)
+  val consumerProps = new Properties()
+  consumerProps.put("zookeeper.connect", zookeeper)
+  consumerProps.put("group.id", group)
+  consumerProps.put("auto.offset.reset", "smallest")
+  consumerProps.put("schema.registry.url", schemaRepo)
 
-  props.put("group.id", groupId)
-  props.put("zookeeper.connect", zookeeperConnect)
-  props.put("auto.offset.reset", "smallest")
-  props.put("consumer.timeout.ms", "500")
-  props.put("auto.commit.interval.ms", "500")
+  val consumerVerifiableProps = new VerifiableProperties(consumerProps)
+  val keyDecoder = new KafkaAvroDecoder(consumerVerifiableProps)
+  val valueDecoder = new KafkaAvroDecoder(consumerVerifiableProps)
 
-  private val config = new ConsumerConfig(props)
+  lazy val consumerIterator = Consumer.create(new ConsumerConfig(consumerProps)).createMessageStreams(Map(readTopic -> 1), keyDecoder, valueDecoder).get(readTopic).get(0).iterator()
 
-  private val connector = Consumer.create(config)
-
-  private val filterSpec = new Whitelist(topic)
-
-  private val streams = connector.createMessageStreamsByFilter(filterSpec, 1, new DefaultDecoder(), new DefaultDecoder())(0)
-
-  def read() =
-    try {
-      if (hasNext) {
-        val message = iterator.next().message()
-        Some(new String(message))
-      } else {
-        None
-      }
-    } catch {
-      case ex: Throwable =>
-        logger.error("Error processing message, skipping this message: ", ex)
-        None
-    }
-
-  lazy val iterator = streams.iterator()
-
-  private def hasNext(): Boolean =
-    try (iterator.hasNext()) catch {
-      case timeOutEx: ConsumerTimeoutException =>
-        false
-      case ex: Throwable =>
-        logger.warn("Getting error when reading message ", ex)
-        false
-    }
-
-  def close(): Unit = connector.shutdown()
-
-}
-
-object KConsumer{
   def main(args: Array[String]): Unit = {
-    val consumer = KafkaConsumer("test", "group-1", "localhost:2181")
+    var count = 0
     while (true) {
-      consumer.read() match{
-        case Some(msg) => println(msg)
-        case None => //println("potatoes")
-      }
+      println(consumerIterator.next().message().toString(),count)
+      count +=1
     }
   }
 }
