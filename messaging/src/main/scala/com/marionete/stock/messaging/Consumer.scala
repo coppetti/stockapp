@@ -11,7 +11,7 @@ import kafka.consumer.{ConsumerConfig, Consumer}
 import io.confluent.kafka.serializers.{KafkaAvroDecoder}
 
 object KafkaConsumer {
-  var readTopic: String = "topic"
+  var readTopic: String = "stocks"
   val group = "group-1"
 
   val broker = "localhost:9092"
