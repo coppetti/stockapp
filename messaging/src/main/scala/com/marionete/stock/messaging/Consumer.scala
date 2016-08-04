@@ -5,18 +5,17 @@ package com.marionete.stock.messaging
   */
 
 
-import java.util.Properties
+import java.util.{Dictionary, Properties}
+
 import kafka.utils.VerifiableProperties
 import kafka.consumer.{Consumer, ConsumerConfig, ConsumerIterator}
 import io.confluent.kafka.serializers.KafkaAvroDecoder
 
 
 
-
-
 class StockConsumerRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable{
 
-  val stockQuotes: Map[String,String] = Map()
+  var stockQuotes = scala.collection.mutable.Map[String,Array[Double][Double]]()
 
   override def run(): Unit = {
    while(true) {
