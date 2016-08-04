@@ -28,6 +28,9 @@ object User {
     val user = new User("Matheus", "19861001")
     val consumerIterator = user.startConsuming("stocks", "group-1", "localhost:9092", "localhost:2181",
       "http://localhost:8081")
-    new Thread(new StockConsumerRunnable(consumerIterator))start()
+    val stockRunnable = new StockConsumerRunnable(consumerIterator)
+    new Thread(stockRunnable).start()
+    Thread.sleep(10000)
+    println(stockRunnable.getStock("Yahoo! Inc.").toString())
   }
 }

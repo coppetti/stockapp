@@ -11,30 +11,37 @@ import kafka.utils.VerifiableProperties
 import kafka.consumer.{Consumer, ConsumerConfig, ConsumerIterator}
 import io.confluent.kafka.serializers.KafkaAvroDecoder
 
+import scala.collection.mutable.ListBuffer
+import scala.util.parsing.json._
 
 
-class StockConsumerRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable{
+class StockConsumerRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable {
 
-  var stockQuotes = scala.collection.mutable.Map[String,Array[Double][Double]]()
+  val lastQuotes: scala.collection.mutable.Map[String, Tuple2[String, String]] = scala.collection.mutable.Map()
 
   override def run(): Unit = {
-   while(true) {
-     consumerIterator.next().message().toString match {
-       case msg if (msg.contains("Apple")) => {
-         println(msg)
-       }
-       case msg if (msg.contains("Microsoft")) => {
-         println(msg)
-       }
-       case msg if (msg.contains("Yahoo")) => {
-         println(msg)
-       }
-       case msg if (msg.contains("Alphabet")) => {
-         println(msg)
-       }
-     }
-   }
+
+
+    while (true) {
+      val json: Option[Any] = JSON.parseFull(consumerIterator.next().message().toString)
+      json match {
+        case Some(e: Map[String, _]) => {
+          if (!lastQuotes.contains(e("symbol").toString)) {
+            lastQuotes.put(e("symbol").toString, (e("buyingPrice").toString,
+              e("sellingPrice").toString))
+          }
+          else {
+            lastQuotes(e("symbol").toString) = (e("buyingPrice").toString, e("sellingPrice").toString)
+          }
+        }
+
+      }
+    }
   }
+
+
+  def getStock(stock:String): (String,String) = lastQuotes(stock)
+
 }
 
 
@@ -53,7 +60,7 @@ class KafkaConsumer(readTopic:String,group:String,broker:String,zookeeper:String
 
   def startConsumer: ConsumerIterator[AnyRef, AnyRef] ={
     Consumer.create(new ConsumerConfig(consumerProps)).
-      createMessageStreams(Map(readTopic -> 1), keyDecoder, valueDecoder).get(readTopic).get(0).iterator()
+      createMessageStreams(Map(readTopic -> 1), keyDecoder, valueDecoder).get(readTopic).get.last.iterator()
   }
 
 }
@@ -63,8 +70,9 @@ object KafkaConsumer {
   def main(args: Array[String]): Unit = {
     val consumer = new KafkaConsumer("stocks","group-1","localhost:9092","localhost:2181",
                                       "http://localhost:8081").startConsumer
-
-    new Thread(new StockConsumerRunnable(consumer)).start()
-
+    val stockRunnable = new StockConsumerRunnable(consumer)
+    new Thread(stockRunnable).start()
+    Thread.sleep(10000)
+    println(stockRunnable.getStock("Yahoo! Inc.").toString())
   }
 }
