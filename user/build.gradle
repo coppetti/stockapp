@@ -1,0 +1,7 @@
+project(":user") {
+    dependencies {
+        compile project(":domain")
+        compile project(":messaging")
+    }
+
+}

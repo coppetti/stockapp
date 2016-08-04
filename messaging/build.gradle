@@ -4,7 +4,7 @@ project (":messaging"){
 
     }
     dependencies{
-
+        compile project(":domain")
         compile "io.confluent:kafka-avro-serializer:3.0.0"
         // https://mvnrepository.com/artifact/org.apache.kafka/kafka_2.11
         compile group: 'org.apache.kafka', name: 'kafka_2.11', version: '0.10.0.0'

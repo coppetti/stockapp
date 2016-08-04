@@ -5,18 +5,17 @@ package com.marionete.stock.messaging
   */
 
 
-import java.util.{Properties}
+import java.util.Properties
+
 import kafka.utils.VerifiableProperties
-import kafka.consumer.{ConsumerConfig, Consumer}
-import io.confluent.kafka.serializers.{KafkaAvroDecoder}
+import kafka.consumer.{Consumer, ConsumerConfig, ConsumerIterator}
+import io.confluent.kafka.serializers.KafkaAvroDecoder
+import com.marionete.stock.domain._
 
-object KafkaConsumer {
-  var readTopic: String = "stocks"
-  val group = "group-1"
 
-  val broker = "localhost:9092"
-  val zookeeper = "localhost:2181"
-  val schemaRepo = "http://localhost:8081"
+
+class KafkaConsumer(readTopic:String,group:String,broker:String,zookeeper:String,
+                    schemaRepo:String){
 
   val consumerProps = new Properties()
   consumerProps.put("zookeeper.connect", zookeeper)
@@ -28,13 +27,24 @@ object KafkaConsumer {
   val keyDecoder = new KafkaAvroDecoder(consumerVerifiableProps)
   val valueDecoder = new KafkaAvroDecoder(consumerVerifiableProps)
 
-  lazy val consumerIterator = Consumer.create(new ConsumerConfig(consumerProps)).createMessageStreams(Map(readTopic -> 1), keyDecoder, valueDecoder).get(readTopic).get(0).iterator()
+  def startConsumer: ConsumerIterator[AnyRef, AnyRef] ={
+    Consumer.create(new ConsumerConfig(consumerProps)).
+      createMessageStreams(Map(readTopic -> 1), keyDecoder, valueDecoder).get(readTopic).get(0).iterator()
+  }
 
+
+}
+
+
+object KafkaConsumer {
   def main(args: Array[String]): Unit = {
-    var count = 0
-    while (true) {
-      println(consumerIterator.next().message().toString(),count)
-      count +=1
+    val consumer = new KafkaConsumer("stocks","group-1","localhost:9092","localhost:2181",
+                                      "http://localhost:8081").startConsumer
+    while(true){
+      consumer.next().message().toString match{
+        case msg if (msg.contains("Apple")) => println(msg.toString)
+        case _ => //println(consumer.next().message().toString)
+      }
     }
   }
 }
