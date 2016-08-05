@@ -1,7 +1,7 @@
-project(":domain") {
-
+project(":account_manager") {
     dependencies {
-
-
+        compile project(":domain")
+        compile project(":messaging")
     }
+
 }
