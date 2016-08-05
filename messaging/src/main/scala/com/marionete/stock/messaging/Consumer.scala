@@ -13,29 +13,7 @@ import io.confluent.kafka.serializers.KafkaAvroDecoder
 import scala.util.parsing.json._
 
 
-
-class BuyStockRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable {
-
-  override def run(): Unit = {
-
-
-    while (true) {
-      val json: Option[Any] = JSON.parseFull(consumerIterator.next().message().toString)
-      json match {
-        case Some(e: Map[String, _]) =>
-        case _ => //Nothing Happens
-      }
-    }
-  }
-
-
-  def buyStock(stock:String): (String,String) = ???
-
-}
-
-
-
-class AddFoundsRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable {
+class BuyStockRunnable(consumerIterator: ConsumerIterator[AnyRef, AnyRef]) extends Runnable {
 
   override def run(): Unit = {
 
@@ -43,21 +21,39 @@ class AddFoundsRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) exten
     while (true) {
       val json: Option[Any] = JSON.parseFull(consumerIterator.next().message().toString)
       json match {
-        case Some(e: Map[String, _]) =>
+        case Some(e: Map[String, _]) => println(e)
         case _ => //Nothing Happens
       }
     }
   }
 
 
-  def addFounds(stock:String): (String,String) = ???
+  def buyStock(stock: String): (String, String) = ???
 
 }
 
 
+class AddFundsRunnable(consumerIterator: ConsumerIterator[AnyRef, AnyRef]) extends Runnable {
+
+  override def run(): Unit = {
 
 
-class StockConsumerRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable {
+    while (true) {
+      val json: Option[Any] = JSON.parseFull(consumerIterator.next().message().toString)
+      json match {
+        case Some(e: Map[String, _]) => println(e)
+        case _ => //Nothing Happens
+      }
+    }
+  }
+
+
+  def addFunds(stock: String): (String, String) = ???
+
+}
+
+
+class StockConsumerRunnable(consumerIterator: ConsumerIterator[AnyRef, AnyRef]) extends Runnable {
 
   val lastQuotes: scala.collection.mutable.Map[String, Tuple2[String, String]] = scala.collection.mutable.Map()
 
@@ -81,13 +77,13 @@ class StockConsumerRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) e
   }
 
 
-  def getStock(stock:String): (String,String) = lastQuotes(stock)
+  def getStock(stock: String): (String, String) = lastQuotes(stock)
 
 }
 
 
-class KafkaConsumer(readTopic:String,group:String,broker:String,zookeeper:String,
-                    schemaRepo:String){
+class KafkaConsumer(readTopic: String, group: String, broker: String, zookeeper: String,
+                    schemaRepo: String) {
 
   val consumerProps = new Properties()
   consumerProps.put("zookeeper.connect", zookeeper)
@@ -99,7 +95,7 @@ class KafkaConsumer(readTopic:String,group:String,broker:String,zookeeper:String
   val keyDecoder = new KafkaAvroDecoder(consumerVerifiableProps)
   val valueDecoder = new KafkaAvroDecoder(consumerVerifiableProps)
 
-  def startConsumer: ConsumerIterator[AnyRef, AnyRef] ={
+  def startConsumer: ConsumerIterator[AnyRef, AnyRef] = {
     Consumer.create(new ConsumerConfig(consumerProps)).
       createMessageStreams(Map(readTopic -> 1), keyDecoder, valueDecoder).get(readTopic).get.last.iterator()
   }
@@ -108,11 +104,13 @@ class KafkaConsumer(readTopic:String,group:String,broker:String,zookeeper:String
 
 object KafkaConsumer {
   def main(args: Array[String]): Unit = {
-    val consumer = new KafkaConsumer("stocks","group-1","localhost:9092","localhost:2181",
-                                      "http://localhost:8081").startConsumer
+    val consumer = new KafkaConsumer("stocks", "group-1", "localhost:9092", "localhost:2181",
+      "http://localhost:8081").startConsumer
     val stockRunnable = new StockConsumerRunnable(consumer)
     new Thread(stockRunnable).start()
     Thread.sleep(10000)
     println(stockRunnable.getStock("Yahoo! Inc.").toString())
   }
 }
+
+
