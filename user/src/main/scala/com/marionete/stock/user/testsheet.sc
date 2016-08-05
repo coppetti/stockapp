@@ -1,8 +1,5 @@
+def extractDouble(str:String): Double={
+  str.split(" ").map(s  => if(s.replace(".","").forall(_.isDigit) ) s ).last.toString.toDouble
+}
 
-
-val lisbuf:scala.collection.mutable.Map[String,Tuple2[String,String]] =  scala.collection.mutable.Map()
-
-lisbuf.put("Yahoo",("120","120"))
-println(lisbuf)
-if(lisbuf.contains("Yahoo")) lisbuf("Yahoo")=("110","09")
-println(lisbuf("Yahoo")._2)
+extractDouble("jshdka ajkhdkj akjhsdka 123.09")

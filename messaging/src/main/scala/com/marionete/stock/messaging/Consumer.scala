@@ -13,6 +13,50 @@ import io.confluent.kafka.serializers.KafkaAvroDecoder
 import scala.util.parsing.json._
 
 
+
+class BuyStockRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable {
+
+  override def run(): Unit = {
+
+
+    while (true) {
+      val json: Option[Any] = JSON.parseFull(consumerIterator.next().message().toString)
+      json match {
+        case Some(e: Map[String, _]) =>
+        case _ => //Nothing Happens
+      }
+    }
+  }
+
+
+  def buyStock(stock:String): (String,String) = ???
+
+}
+
+
+
+class AddFoundsRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable {
+
+  override def run(): Unit = {
+
+
+    while (true) {
+      val json: Option[Any] = JSON.parseFull(consumerIterator.next().message().toString)
+      json match {
+        case Some(e: Map[String, _]) =>
+        case _ => //Nothing Happens
+      }
+    }
+  }
+
+
+  def addFounds(stock:String): (String,String) = ???
+
+}
+
+
+
+
 class StockConsumerRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) extends Runnable {
 
   val lastQuotes: scala.collection.mutable.Map[String, Tuple2[String, String]] = scala.collection.mutable.Map()
