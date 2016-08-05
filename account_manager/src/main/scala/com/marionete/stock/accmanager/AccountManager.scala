@@ -8,7 +8,7 @@ import kafka.consumer.ConsumerIterator
   */
 class AccountManager {
 
-  def addFounds() = ???
+  def addFunds() = ???
 
   //Problably will be replicated in other classes, should move it to another place (consumer class)
   def startConsuming(readTopic: String, group: String, broker: String, zookeeper: String,
@@ -21,9 +21,9 @@ object AccountManager {
 
   def main(args: Array[String]): Unit = {
     val amanager = new AccountManager()
-    val consumerIterator = amanager.startConsuming("founds", "group-1", "localhost:9092", "localhost:2181",
+    val consumerIterator = amanager.startConsuming("funds", "group-1", "localhost:9092", "localhost:2181",
       "http://localhost:8081")
-    val foundsRunnable = new AddFoundsRunnable(consumerIterator)
-    new Thread(foundsRunnable).start()
+    val fundsRunnable = new AddFundsRunnable(consumerIterator)
+    new Thread(fundsRunnable).start()
   }
 }

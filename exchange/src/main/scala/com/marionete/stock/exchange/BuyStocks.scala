@@ -1,6 +1,9 @@
 package com.marionete.stock.exchange
 
-import com.marionete.stock.messaging.{AddFoundsRunnable, KafkaConsumer}
+import java.net.URL
+
+import com.marionete.stock.domain.BuyIntent
+import com.marionete.stock.messaging.{AddFundsRunnable, AvroKafkaProducer, KafkaConfig, KafkaConsumer}
 import kafka.consumer.ConsumerIterator
 
 /**
@@ -16,12 +19,12 @@ class BuyStocks {
   }
 }
 
-object BuyStocks{
+object BuyStocks {
   def main(args: Array[String]): Unit = {
     val buyer = new BuyStocks()
     val consumerIterator = buyer.startConsuming("buying", "group-1", "localhost:9092", "localhost:2181",
       "http://localhost:8081")
-    val foundsRunnable = new AddFoundsRunnable(consumerIterator)
-    new Thread(foundsRunnable).start()
+    val fundsRunnable = new AddFundsRunnable(consumerIterator)
+    new Thread(fundsRunnable).start()
   }
 }

@@ -3,7 +3,7 @@ package com.marionete.stock.user
 
 import java.net.URL
 
-import com.marionete.stock.domain.{BuyIntent, Founds}
+import com.marionete.stock.domain.{BuyIntent, Funds}
 import com.marionete.stock.messaging._
 import kafka.consumer.ConsumerIterator
 
@@ -31,11 +31,11 @@ class User(name: String, id: String) {
     buyProducer.send(new BuyIntent(this.name, stock, extractDouble(buyingPrice), qty), this.id)
   }
 
-  def addFounds(user: String, qty: Double): Unit = {
+  def addFunds(user: String, qty: Double): Unit = {
     val brokers = Seq("localhost:9092")
     val schemaUrl = new URL("http://localhost:8081")
-    val foundAdder = new AvroKafkaProducer[Founds]("founds", new KafkaConfig(brokers, schemaUrl))
-    foundAdder.send(new Founds(this.name, qty), this.id)
+    val fundAdder = new AvroKafkaProducer[Funds]("funds", new KafkaConfig(brokers, schemaUrl))
+    fundAdder.send(new Funds(this.name, qty), this.id)
   }
 }
 
