@@ -3,4 +3,6 @@ include 'domain',
 'messaging',
 'importer',
 'exchange',
-'account_manager'
+'account_manager',
+'user'
+

@@ -1,9 +1,11 @@
 package com.marionete.stock.domain
 
 /**
-  * It has a symbol
+  * class to deal with stock data structure
   */
 case class Stock(symbol: String, sellingPrice: BigDecimal, buyingPrice: BigDecimal)
+
+
 
 
 
