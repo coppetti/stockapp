@@ -5,13 +5,11 @@ package com.marionete.stock.messaging
   */
 
 
-import java.util.{Dictionary, Properties}
+import java.util.Properties
 
 import kafka.utils.VerifiableProperties
 import kafka.consumer.{Consumer, ConsumerConfig, ConsumerIterator}
 import io.confluent.kafka.serializers.KafkaAvroDecoder
-
-import scala.collection.mutable.ListBuffer
 import scala.util.parsing.json._
 
 
@@ -34,7 +32,6 @@ class StockConsumerRunnable(consumerIterator: ConsumerIterator[AnyRef,AnyRef]) e
             lastQuotes(e("symbol").toString) = (e("buyingPrice").toString, e("sellingPrice").toString)
           }
         }
-
       }
     }
   }
@@ -64,7 +61,6 @@ class KafkaConsumer(readTopic:String,group:String,broker:String,zookeeper:String
   }
 
 }
-
 
 object KafkaConsumer {
   def main(args: Array[String]): Unit = {

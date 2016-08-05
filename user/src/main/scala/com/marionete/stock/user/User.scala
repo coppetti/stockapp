@@ -1,6 +1,9 @@
 package com.marionete.stock.user
 
 
+import java.net.URL
+
+import com.marionete.stock.domain.{BuyIntent,Founds}
 import com.marionete.stock.messaging._
 import kafka.consumer.ConsumerIterator
 
@@ -16,8 +19,18 @@ class User(name: String, id: String) {
     new KafkaConsumer(readTopic, group, broker, zookeeper, schemaRepo).startConsumer
   }
 
-  def publishBuyIntent: Unit = {
+  def publishBuyIntent(stock:String,buyingPrice:Double,qty:Int): Unit = {
+    val brokers = Seq("localhost:9092")
+    val schemaUrl = new URL("http://localhost:8081")
+    val buyProducer = new AvroKafkaProducer[BuyIntent]("buying",new KafkaConfig(brokers,schemaUrl))
+    buyProducer.send(new BuyIntent(this.name,stock,buyingPrice,qty),this.id)
+  }
 
+  def addFounds(user:String,qty:Double): Unit ={
+    val brokers = Seq("localhost:9092")
+    val schemaUrl = new URL("http://localhost:8081")
+    val foundAdder = new AvroKafkaProducer[Founds]("buying",new KafkaConfig(brokers,schemaUrl))
+    foundAdder.send(new Founds(this.name,qty),this.id)
   }
 }
 
